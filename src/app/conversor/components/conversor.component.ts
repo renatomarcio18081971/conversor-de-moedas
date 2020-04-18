@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { MoedaModel, ConversaoModel, ConversaoResponseModel } from '../models';
 import { MoedaService, ConversorService } from '../services';
+import { debug } from 'util';
 
 @Component({
   selector: 'app-conversor',
@@ -24,7 +25,7 @@ export class ConversorComponent implements OnInit {
 
   ngOnInit() {
   	this.moedas = this.moedaService.listarTodas();
-  	this.init();
+    this.init();
   }
 
   /**
@@ -33,7 +34,7 @@ export class ConversorComponent implements OnInit {
    * @return void
    */
   init(): void {
-  	this.conversao = new ConversaoModel('USD', 'BRL', null);
+  	this.conversao = new ConversaoModel('EUR', 'BRL', null);
   	this.possuiErro = false;
   }
 
